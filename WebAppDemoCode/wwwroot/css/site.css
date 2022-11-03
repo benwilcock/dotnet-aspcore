@@ -1,0 +1,46 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+p {
+  color: grey;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: block;
+  margin-top: 10px;
+  text-align: center;
+}
+a:link {
+  color: cornflowerblue;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color: cornflowerblue;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: cornflowerblue;
+  background-color: transparent;
+  text-decoration: underline;
+}
+a:active {
+  color: cornflowerblue;
+  background-color: transparent;
+  text-decoration: underline;
+}

@@ -1,0 +1,15 @@
+﻿@page
+@{
+    ViewData["Title"] = "Powered By VMware Tanzu Application Platform";
+}
+
+<div class="text-center">
+    <img style="display: block; margin-left: auto; margin-right: auto; width: 80%;" src="tap-into-prod.png"/>
+
+    <p>A Ben Wilcock (<a href="https://twitter.com/benbravo73">benbravo73</a>) Demo For <b style="color: white;">@this.ViewData["client"]</b>. 
+        <span th:text="getProperty('framework')}"/>.
+        Source on <a href="https://github.com/benwilcock/aspnet-core-razor">GitHub.</a>
+        REST Json endpoint: <a href="/api/messages">/messages</a> [GET]. 
+    </p>
+    @* <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core @DateTime.Now</a>.</p> *@
+</div>
