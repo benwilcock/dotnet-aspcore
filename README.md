@@ -4,22 +4,30 @@ Designed to illustrate how buildpacks and supply chains work to build and deploy
 
 ## Running Locally
 
-``
+`dotnet run --project WebAppDemoCode`
 
-## Viewing
+## Running Tests
 
-`curl http://localhost:7000`
+`dotnet test`
+
+## Viewing The Homepage
+
+Point your browser to`http://localhost:5001`
+
+## Viewing The Messages REST Endpoint
+
+Point your browser to`http://localhost:5001/api/messages` or follow the link on the homepage.
 
 ## Running on VMware Tanzu Application Platform
 
 ```powershell
-tanzu apps workload create dotnet-aspcore-demo `
-  --git-repo https://github.com/benwilcock/dotnet-aspcore-demo `
+tanzu apps workload create dotnet-aspcore `
+  --git-repo https://github.com/benwilcock/dotnet-aspcore `
   --git-branch main `
   --type web `
   --build-env BP_DOTNET_PROJECT_PATH=./WebAppDemoCode `
   --label apps.tanzu.vmware.com/has-tests=true `
-  --label app.kubernetes.io/part-of=dotnet-aspcore-demo `
+  --label app.kubernetes.io/part-of=dotnet-aspcore `
   --param-yaml testing_pipeline_matching_labels="{'apps.tanzu.vmware.com/pipeline':'test', 'apps.tanzu.vmware.com/language':'dotnet'}" `
   --annotation autoscaling.knative.dev/minScale=1 `
   --namespace default `
