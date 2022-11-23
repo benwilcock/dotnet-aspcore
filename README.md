@@ -30,7 +30,6 @@ tanzu apps workload create dotnet-aspcore `
   --label app.kubernetes.io/part-of=dotnet-aspcore `
   --param-yaml testing_pipeline_matching_labels="{'apps.tanzu.vmware.com/pipeline':'test', 'apps.tanzu.vmware.com/language':'dotnet'}" `
   --annotation autoscaling.knative.dev/minScale=1 `
-  --namespace default `
   --tail --yes
 ```
 
