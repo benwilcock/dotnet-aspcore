@@ -10,19 +10,18 @@ public class MessagesService : IMessagesService
         _logger = logger;
         _configuration = configuration;
     }
-    
-    public List<KeyValuePair<String, String>> GetAll()
-    {
-        List<KeyValuePair<String, String>> messages = new()
-        {
-            new KeyValuePair<string, string>("msg_subject", "Secure software supply chains are great!"),
-            new KeyValuePair<string, string>("msg_body", "This is my message body."),
-            new KeyValuePair<string, string>("client", _configuration["demoClient"]),
-            new KeyValuePair<string, string>("framework", ".Net Core & Razor")
-        };
 
-        _logger.Log(LogLevel.Information, "Returning the message group {messages}", messages);
-        return messages;
+    public IDictionary<String, String> GetAll()
+    {
+        IDictionary<String, String> message = new Dictionary<string, string>();
+
+        message.Add("msg_subject", "Secure software supply chains are great!");
+        message.Add("msg_body", "This is my message body.");
+        message.Add("client", _configuration["demoClient"]);
+        message.Add("framework", ".Net Core & Razor");
+        
+        _logger.Log(LogLevel.Information, "Returning the message group {messages}", message);
+        return message;
     }
-    
+
 }

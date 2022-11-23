@@ -2,5 +2,5 @@
 
 public interface IMessagesService
 {
-    List<KeyValuePair<String, String>> GetAll();
+    IDictionary<String, String> GetAll();
 }
