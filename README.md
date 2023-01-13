@@ -26,6 +26,7 @@ tanzu apps workload create dotnet-aspcore `
   --git-branch main `
   --type web `
   --build-env BP_DOTNET_PROJECT_PATH=./WebAppDemoCode `
+  --build-env BP_DOTNET_FRAMEWORK_VERSION=7.0.2 `
   --label apps.tanzu.vmware.com/has-tests=true `
   --label app.kubernetes.io/part-of=dotnet-aspcore `
   --param-yaml testing_pipeline_matching_labels="{'apps.tanzu.vmware.com/pipeline':'test', 'apps.tanzu.vmware.com/language':'dotnet'}" `
