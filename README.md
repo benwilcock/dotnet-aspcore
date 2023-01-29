@@ -23,10 +23,10 @@ Point your browser to`http://localhost:5001/api/messages` or follow the link on 
 ```powershell
 tanzu apps workload create dotnet-aspcore `
   --git-repo https://github.com/benwilcock/dotnet-aspcore `
-  --git-branch main `
+  --git-branch dotnet-7-upgrade `
   --type web `
   --build-env BP_DOTNET_PROJECT_PATH=./WebAppDemoCode `
-  --build-env BP_DOTNET_FRAMEWORK_VERSION=7.0.2 `
+  --build-env BP_DOTNET_FRAMEWORK_VERSION=7.0.0 `
   --label apps.tanzu.vmware.com/has-tests=true `
   --label app.kubernetes.io/part-of=dotnet-aspcore `
   --param-yaml testing_pipeline_matching_labels="{'apps.tanzu.vmware.com/pipeline':'test', 'apps.tanzu.vmware.com/language':'dotnet'}" `
