@@ -21,7 +21,7 @@ Point your browser to`http://localhost:5001/api/messages` or follow the link on 
 ## Running on VMware Tanzu Application Platform
 
 ```powershell
-tanzu apps workload create dotnet-aspcore `
+tanzu apps workload apply dotnet-aspcore `
   --git-repo https://github.com/benwilcock/dotnet-aspcore `
   --git-branch dotnet-7-upgrade `
   --type web `
@@ -29,7 +29,7 @@ tanzu apps workload create dotnet-aspcore `
   --build-env BP_DOTNET_FRAMEWORK_VERSION=7.0.0 `
   --label apps.tanzu.vmware.com/has-tests=true `
   --label app.kubernetes.io/part-of=dotnet-aspcore `
-  --param-yaml testing_pipeline_matching_labels="{'apps.tanzu.vmware.com/pipeline':'test', 'apps.tanzu.vmware.com/language':'dotnet'}" `
+  --param-yaml testing_pipeline_matching_labels="{'apps.tanzu.vmware.com/pipeline':'test', 'apps.tanzu.vmware.com/language':'dotnet', 'apps.tanzu.vmware.com/version':'7.0'}" `
   --annotation autoscaling.knative.dev/minScale=1 `
   --tail --yes
 ```
