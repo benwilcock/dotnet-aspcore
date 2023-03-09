@@ -1,0 +1,30 @@
+---
+apiVersion: carto.run/v1alpha1
+kind: Workload
+metadata:
+  labels:
+    app.kubernetes.io/part-of: dotnet-aspcore
+    apps.tanzu.vmware.com/has-tests: "true"
+    apps.tanzu.vmware.com/workload-type: web
+  name: dotnet-aspcore
+spec:
+  build:
+    env:
+    - name: BP_DOTNET_PROJECT_PATH
+      value: ./WebAppDemoCode
+    - name: BP_DOTNET_FRAMEWORK_VERSION
+      value: 7.0.0
+  params:
+  - name: annotations
+    value:
+      autoscaling.knative.dev/minScale: "1"
+  - name: testing_pipeline_matching_labels
+    value:
+      apps.tanzu.vmware.com/language: dotnet
+      apps.tanzu.vmware.com/pipeline: test
+      apps.tanzu.vmware.com/version: "7.0"
+  source:
+    git:
+      ref:
+        branch: dotnet-7-upgrade
+      url: https://github.com/benwilcock/dotnet-aspcore
