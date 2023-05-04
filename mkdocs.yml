@@ -1,0 +1,7 @@
+# This is used to build the TechDocs for this component and is referenced here: https://github.com/benwilcock/backstage-catalogs/blob/main/system-polyglot-demo.yml
+site_name: 'dotnet-aspcore'
+site_description: 'A .Net ASP Core sample built using Razor Pages'
+site_author: user:ben.wilcock
+
+nav:
+  - About: 'index.md'
