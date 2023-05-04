@@ -36,7 +36,7 @@ You may need to modify this command depending needs of the supply chain you're u
 
 ## Customisations
 
-For a simple customisation, in the application code (in the `appsettings.json` file) change the name of the `client` property from "VMware" to something else and then commit/redeploy/restart.
+For a simple customisation, in the application code (in the `appsettings.json` file) change the name of the `DemoClient` property from "VMware" to something else and then commit/redeploy/restart.
 
 ```json
 {
